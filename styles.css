@@ -140,6 +140,28 @@ body::after {
   color: var(--gold);
 }
 
+.nav-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  background: rgba(12, 16, 18, 0.55);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--gold-light);
+  border-radius: 999px;
+}
+
 /* Hero */
 .hero {
   text-align: center;
@@ -449,14 +471,71 @@ body::after {
 }
 
 .stat-label {
+  display: block;
   font-size: 0.9rem;
   color: var(--text-muted);
+}
+
+.stat-meta {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.75rem;
+  color: rgba(109, 255, 191, 0.62);
 }
 
 .token-links {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+}
+
+/* Buy */
+.buy {
+  background: rgba(7, 10, 12, 0.72);
+}
+
+.buy-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.buy-step {
+  padding: 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.buy-step-number {
+  display: inline-flex;
+  width: 2rem;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.9rem;
+  border: 1px solid rgba(109, 255, 191, 0.45);
+  border-radius: 50%;
+  color: var(--gold-light);
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
+.buy-step h3 {
+  margin: 0 0 0.5rem;
+  color: var(--gold);
+  font-size: 1.05rem;
+}
+
+.buy-step p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.buy-actions {
+  margin-top: 0.5rem;
 }
 
 /* Roadmap */
@@ -612,6 +691,16 @@ body::after {
 .social-link:hover {
   border-color: var(--gold);
   color: var(--gold);
+}
+
+/* Disclaimer */
+.disclaimer {
+  background: rgba(18, 24, 26, 0.58);
+}
+
+.disclaimer .lead {
+  max-width: 840px;
+  margin-bottom: 0;
 }
 
 /* Footer */
@@ -854,8 +943,32 @@ body::after {
 }
 
 @media (max-width: 640px) {
-  .nav-links {
+  .nav {
+    align-items: flex-start;
+    flex-wrap: wrap;
     gap: 1rem;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+    margin-left: auto;
+  }
+
+  .nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding-top: 0.25rem;
+  }
+
+  .nav-links.is-open {
+    display: flex;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 0.65rem 0;
   }
 
   .token-stats {

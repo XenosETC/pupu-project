@@ -1,4 +1,39 @@
 (function () {
+  var navToggle = document.querySelector(".nav-toggle");
+  var primaryNav = document.getElementById("primary-nav");
+  if (navToggle && primaryNav) {
+    navToggle.addEventListener("click", function () {
+      var expanded = navToggle.getAttribute("aria-expanded") === "true";
+      navToggle.setAttribute("aria-expanded", String(!expanded));
+      navToggle.setAttribute("aria-label", expanded ? "Open navigation" : "Close navigation");
+      primaryNav.classList.toggle("is-open", !expanded);
+    });
+
+    primaryNav.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navToggle.setAttribute("aria-expanded", "false");
+        navToggle.setAttribute("aria-label", "Open navigation");
+        primaryNav.classList.remove("is-open");
+      });
+    });
+  }
+
+  document.querySelectorAll(".contract-copy[data-copy]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var id = this.getAttribute("data-copy");
+      var code = document.getElementById(id);
+      if (!code) return;
+      navigator.clipboard.writeText(code.textContent.trim()).then(function () {
+        btn.textContent = "Copied!";
+        btn.classList.add("copied");
+        setTimeout(function () {
+          btn.textContent = "Copy";
+          btn.classList.remove("copied");
+        }, 2000);
+      });
+    });
+  });
+
   var BLOCKSCOUT = "https://etc.blockscout.com/api/v2";
   var ETC_RPC = "https://etc.blockscout.com/api/eth-rpc";
   var TOKEN_ADDRESS = "0x0bD01d2C68f89AbeD94BC85988fa8A6e18EFb2db";

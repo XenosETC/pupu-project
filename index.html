@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PUPU — PepeCoinClassic on Ethereum Classic</title>
   <meta name="description" content="PUPU is a PepeCoinClassic derivative on Ethereum Classic. In PUPU we trust. Staking coming soon." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="PUPU — PepeCoinClassic on Ethereum Classic" />
+  <meta property="og:description" content="Live PUPU token stats, liquidity, and security data on Ethereum Classic." />
+  <meta property="og:url" content="https://pupu-etc-premium-redesign.onrender.com/" />
+  <meta property="og:image" content="https://pupu-etc-premium-redesign.onrender.com/assets/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="PUPU — PepeCoinClassic on Ethereum Classic" />
+  <meta name="twitter:description" content="Live PUPU token stats, liquidity, and security data on Ethereum Classic." />
+  <meta name="twitter:image" content="https://pupu-etc-premium-redesign.onrender.com/assets/logo.png" />
   <link rel="icon" href="assets/logo.png" type="image/png" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,9 +26,15 @@
   <header class="header">
     <nav class="nav">
       <a href="#" class="logo-text">PUPU</a>
-      <div class="nav-links">
+      <button type="button" class="nav-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-links" id="primary-nav">
         <a href="#about">About</a>
         <a href="#token">Token</a>
+        <a href="#buy">Buy</a>
         <a href="#roadmap">Roadmap</a>
         <a href="token-info.html">Live stats</a>
         <a href="#staking">Staking</a>
@@ -93,14 +108,17 @@
           <div class="stat">
             <span class="stat-value" id="home-multisig-pupu">43B</span>
             <span class="stat-label">In multisig</span>
+            <span class="stat-meta" id="home-multisig-status">updates from chain</span>
           </div>
           <div class="stat">
             <span class="stat-value" id="home-lp-pupu">14B</span>
             <span class="stat-label">HebeSwap LP</span>
+            <span class="stat-meta" id="home-lp-etc">live pool balance</span>
           </div>
           <div class="stat">
             <span class="stat-value" id="home-lp-burned-pct">70%+</span>
             <span class="stat-label">LP in dead wallet</span>
+            <span class="stat-meta" id="home-lp-burned-status">updates from Blockscout</span>
           </div>
         </div>
         <div class="token-links">
@@ -108,6 +126,34 @@
           <a href="https://dexscreener.com/ethereumclassic/0x9f1a8fc0ef058f3001c1628d8130d1c5301201c9" target="_blank" rel="noopener noreferrer" class="btn btn-outline">View on DexScreener (ETC)</a>
           <a href="https://etc.blockscout.com/token/0x0bD01d2C68f89AbeD94BC85988fa8A6e18EFb2db" target="_blank" rel="noopener noreferrer" class="btn btn-outline">View token on Blockscout (ETC)</a>
           <a href="token-info.html" class="btn btn-primary">Live stats &amp; token info</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="buy" class="section buy">
+      <div class="container">
+        <h2>How to buy PUPU</h2>
+        <p class="lead">Trade PUPU on Ethereum Classic by pasting the token contract into HebeSwap.</p>
+        <div class="buy-steps">
+          <div class="buy-step">
+            <span class="buy-step-number">1</span>
+            <h3>Open HebeSwap</h3>
+            <p>Connect a wallet on Ethereum Classic with ETC available for gas and swapping.</p>
+          </div>
+          <div class="buy-step">
+            <span class="buy-step-number">2</span>
+            <h3>Paste the token contract</h3>
+            <p>Use <code class="inline-code">0x0bD...b2db</code> to add PUPU as the token you want to receive.</p>
+          </div>
+          <div class="buy-step">
+            <span class="buy-step-number">3</span>
+            <h3>Review and swap</h3>
+            <p>Check the output, slippage, and contract address before confirming the trade.</p>
+          </div>
+        </div>
+        <div class="token-links buy-actions">
+          <a href="https://app.hebeswap.com/#/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Open HebeSwap</a>
+          <a href="#token" class="btn btn-outline">Copy contract</a>
         </div>
       </div>
     </section>
@@ -123,8 +169,8 @@
             <ul>
               <li>PUPU live on <strong>Ethereum Classic</strong></li>
               <li>Tracked on <strong>DexScreener</strong> for ETC</li>
-              <li>43B in multisig · 14B in HebeSwap LP</li>
-              <li>70%+ of LP in dead wallet</li>
+              <li>Live multisig and HebeSwap LP stats shown above</li>
+              <li>Live burned LP share tracked from Blockscout</li>
               <li>Trade via copy/paste of contract address on HebeSwap</li>
             </ul>
           </div>
@@ -170,12 +216,20 @@
     <section id="community" class="section community">
       <div class="container">
         <h2>Community</h2>
-        <p class="lead">Join the PUPU community. Links will be added here.</p>
+        <p class="lead">Track PUPU markets and stay close to the Ethereum Classic ecosystem.</p>
         <div class="community-links">
-          <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
-          <a href="#" class="social-link" aria-label="Telegram">Telegram</a>
-          <a href="#" class="social-link" aria-label="Discord">Discord</a>
+          <a href="https://dexscreener.com/ethereumclassic/0x9f1a8fc0ef058f3001c1628d8130d1c5301201c9" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="DexScreener">DexScreener</a>
+          <a href="https://x.com/eth_classic" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Ethereum Classic on X">ETC on X</a>
+          <a href="https://t.me/ETCnetwork" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Ethereum Classic Telegram">ETC Telegram</a>
+          <a href="https://ethereumclassic.org/discord" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Ethereum Classic Discord">ETC Discord</a>
         </div>
+      </div>
+    </section>
+
+    <section class="section disclaimer">
+      <div class="container">
+        <h2>Risk note</h2>
+        <p class="lead">PUPU is a meme token on Ethereum Classic. Crypto assets can be volatile, liquidity can change quickly, and third-party links may update independently. Always verify contract addresses before trading.</p>
       </div>
     </section>
   </main>

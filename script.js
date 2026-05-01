@@ -30,11 +30,33 @@ document.querySelectorAll(".contract-copy[data-copy]").forEach(function (btn) {
   });
 });
 
+var navToggle = document.querySelector(".nav-toggle");
+var primaryNav = document.getElementById("primary-nav");
+if (navToggle && primaryNav) {
+  navToggle.addEventListener("click", function () {
+    var expanded = navToggle.getAttribute("aria-expanded") === "true";
+    navToggle.setAttribute("aria-expanded", String(!expanded));
+    navToggle.setAttribute("aria-label", expanded ? "Open navigation" : "Close navigation");
+    primaryNav.classList.toggle("is-open", !expanded);
+  });
+
+  primaryNav.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      navToggle.setAttribute("aria-expanded", "false");
+      navToggle.setAttribute("aria-label", "Open navigation");
+      primaryNav.classList.remove("is-open");
+    });
+  });
+}
+
 // Homepage live token stats.
 (function () {
   var multisigEl = document.getElementById("home-multisig-pupu");
   var lpEl = document.getElementById("home-lp-pupu");
   var burnedEl = document.getElementById("home-lp-burned-pct");
+  var multisigStatusEl = document.getElementById("home-multisig-status");
+  var lpEtcEl = document.getElementById("home-lp-etc");
+  var burnedStatusEl = document.getElementById("home-lp-burned-status");
   if (!multisigEl || !lpEl || !burnedEl) return;
 
   var BLOCKSCOUT = "https://etc.blockscout.com/api/v2";
@@ -130,24 +152,31 @@ document.querySelectorAll(".contract-copy[data-copy]").forEach(function (btn) {
       var multisigRaw = findTokenBalance(multisigBalances, TOKEN_ADDRESS);
       var lpBurnedRaw = findTokenBalance(deadBalances, LP_ADDRESS);
       var reservePUPU = null;
+      var reserveETC = null;
 
       if (reserves && token0 !== null && token1 !== null) {
         var pupuLower = TOKEN_ADDRESS.toLowerCase();
         var wetcLower = WETC_ADDRESS.toLowerCase();
         if (token0 === pupuLower && token1 === wetcLower) {
           reservePUPU = reserves[0];
+          reserveETC = reserves[1];
         } else if (token0 === wetcLower && token1 === pupuLower) {
           reservePUPU = reserves[1];
+          reserveETC = reserves[0];
         }
       }
 
       var multisigFormatted = formatCompact(multisigRaw);
       var lpFormatted = formatCompact(reservePUPU);
+      var etcFormatted = formatCompact(reserveETC);
       if (multisigFormatted) multisigEl.textContent = multisigFormatted;
       if (lpFormatted) lpEl.textContent = lpFormatted;
+      if (multisigFormatted && multisigStatusEl) multisigStatusEl.textContent = "live multisig balance";
+      if (lpFormatted && etcFormatted && lpEtcEl) lpEtcEl.textContent = etcFormatted + " ETC paired";
 
       if (lpBurnedRaw != null && lpTotalSupplyRaw && Number(lpTotalSupplyRaw) > 0) {
         burnedEl.textContent = ((Number(lpBurnedRaw) / Number(lpTotalSupplyRaw)) * 100).toFixed(1) + "%";
+        if (burnedStatusEl) burnedStatusEl.textContent = "live burned LP share";
       }
     })
     .catch(function () {

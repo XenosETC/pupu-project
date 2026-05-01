@@ -4,6 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PUPU — Live stats &amp; token info</title>
+  <meta name="description" content="Live PUPU token, pool, burned LP, and holder stats on Ethereum Classic." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="PUPU — Live stats & token info" />
+  <meta property="og:description" content="Live PUPU token, pool, burned LP, and holder stats on Ethereum Classic." />
+  <meta property="og:url" content="https://pupu-etc-premium-redesign.onrender.com/token-info.html" />
+  <meta property="og:image" content="https://pupu-etc-premium-redesign.onrender.com/assets/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="PUPU — Live stats & token info" />
+  <meta name="twitter:description" content="Live PUPU token, pool, burned LP, and holder stats on Ethereum Classic." />
+  <meta name="twitter:image" content="https://pupu-etc-premium-redesign.onrender.com/assets/logo.png" />
   <link rel="icon" href="assets/logo.png" type="image/png" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,9 +26,15 @@
   <header class="header">
     <nav class="nav">
       <a href="index.html" class="logo-text">PUPU</a>
-      <div class="nav-links">
+      <button type="button" class="nav-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-links" id="primary-nav">
         <a href="index.html#about">About</a>
         <a href="index.html#token">Token</a>
+        <a href="index.html#buy">Buy</a>
         <a href="index.html#roadmap">Roadmap</a>
         <a href="token-info.html">Live stats</a>
         <a href="index.html#staking">Staking</a>
@@ -36,12 +52,18 @@
         <div class="contracts-block contracts-block-page">
           <div class="contract-address">
             <span class="contract-label">Token contract</span>
-            <code class="contract-code">0x0bD01d2C68f89AbeD94BC85988fa8A6e18EFb2db</code>
+            <div class="contract-row">
+              <code class="contract-code" id="stats-token-contract">0x0bD01d2C68f89AbeD94BC85988fa8A6e18EFb2db</code>
+              <button type="button" class="contract-copy" data-copy="stats-token-contract" title="Copy address">Copy</button>
+            </div>
             <a href="https://etc.blockscout.com/token/0x0bD01d2C68f89AbeD94BC85988fa8A6e18EFb2db" target="_blank" rel="noopener noreferrer" class="contract-link">View on Blockscout →</a>
           </div>
           <div class="contract-address">
             <span class="contract-label">LP contract</span>
-            <code class="contract-code">0x9f1a8fC0ef058F3001c1628D8130d1C5301201C9</code>
+            <div class="contract-row">
+              <code class="contract-code" id="stats-lp-contract">0x9f1a8fC0ef058F3001c1628D8130d1C5301201C9</code>
+              <button type="button" class="contract-copy" data-copy="stats-lp-contract" title="Copy address">Copy</button>
+            </div>
             <a href="https://etc.blockscout.com/token/0x9f1a8fC0ef058F3001c1628D8130d1C5301201C9" target="_blank" rel="noopener noreferrer" class="contract-link">View on Blockscout →</a>
           </div>
         </div>
