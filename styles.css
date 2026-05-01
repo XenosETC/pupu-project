@@ -547,6 +547,18 @@ body::after {
   color: var(--gold-light);
 }
 
+.roadmap-phase a,
+.roadmap-phase a:visited {
+  color: var(--gold-light);
+  text-decoration-color: rgba(109, 255, 191, 0.45);
+  text-underline-offset: 0.18em;
+}
+
+.roadmap-phase a:hover {
+  color: var(--gold);
+  text-decoration-color: var(--gold);
+}
+
 /* Staking */
 .staking {
   background: var(--surface);
