@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PUPU — Live stats &amp; token info</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="noise"></div>
+
+  <header class="header">
+    <nav class="nav">
+      <a href="index.html" class="logo-text">PUPU</a>
+      <div class="nav-links">
+        <a href="index.html#about">About</a>
+        <a href="index.html#token">Token</a>
+        <a href="index.html#roadmap">Roadmap</a>
+        <a href="token-info.html">Live stats</a>
+        <a href="index.html#staking">Staking</a>
+        <a href="index.html#community">Community</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h1 class="page-title">Live stats &amp; token info</h1>
+        <p class="lead">Real-time data from Ethereum Classic (Blockscout).</p>
+
+        <div class="contracts-block contracts-block-page">
+          <div class="contract-address">
+            <span class="contract-label">Token contract</span>
+            <code class="contract-code">0x0bD01d2C68f89AbeD94BC85988fa8A6e18EFb2db</code>
+            <a href="https://etc.blockscout.com/token/0x0bD01d2C68f89AbeD94BC85988fa8A6e18EFb2db" target="_blank" rel="noopener noreferrer" class="contract-link">View on Blockscout →</a>
+          </div>
+          <div class="contract-address">
+            <span class="contract-label">LP contract</span>
+            <code class="contract-code">0x9f1a8fC0ef058F3001c1628D8130d1C5301201C9</code>
+            <a href="https://etc.blockscout.com/token/0x9f1a8fC0ef058F3001c1628D8130d1C5301201C9" target="_blank" rel="noopener noreferrer" class="contract-link">View on Blockscout →</a>
+          </div>
+        </div>
+
+        <h2 class="stats-heading">Live stats</h2>
+        <p class="lead">Pool liquidity and burned amounts from the PUPU/ETC pool. Tokens burned and ETC burned are the PUPU and ETC sides of the LP in the dead address <code class="inline-code">0x…dEaD</code>.</p>
+        <div class="live-stats-grid">
+          <div class="stat-card stat-card-wide">
+            <span class="stat-card-label">Pool liquidity (tokens / ETC)</span>
+            <span class="stat-card-value stat-card-value-multi" id="pool-liquidity">—</span>
+            <span class="stat-card-sublabel">Current PUPU and ETC in the pool</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card-label">ETC burned</span>
+            <span class="stat-card-value" id="etc-burned">—</span>
+            <span class="stat-card-unit">ETC</span>
+            <span class="stat-card-sublabel">Value of LP in dead wallet</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card-label">Tokens burned</span>
+            <span class="stat-card-value" id="tokens-burned">—</span>
+            <span class="stat-card-unit">PUPU</span>
+            <span class="stat-card-sublabel">Value of LP in dead wallet</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card-label">LP burned %</span>
+            <span class="stat-card-value" id="lp-burned-pct">—</span>
+            <span class="stat-card-sublabel">of LP supply</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card-label">PUPU holders</span>
+            <span class="stat-card-value" id="token-holders">—</span>
+            <span class="stat-card-sublabel">unique addresses</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card-label">LP holders</span>
+            <span class="stat-card-value" id="lp-holders">—</span>
+            <span class="stat-card-sublabel">LP token holders</span>
+          </div>
+        </div>
+        <div class="stat-card stat-card-single">
+          <span class="stat-card-label">Tokens burned to dead wallet</span>
+          <span class="stat-card-value stat-card-value-large" id="pupu-dead">—</span>
+          <span class="stat-card-unit">PUPU</span>
+          <span class="stat-card-sublabel">PUPU token balance in <code class="inline-code">0x…dEaD</code> · updates from chain</span>
+        </div>
+        <h2 class="stats-heading pie-heading">PUPU supply</h2>
+        <div class="pie-wrap">
+          <div class="pie-container">
+            <svg class="pie-svg" id="pupu-pie" viewBox="0 0 100 100" aria-label="PUPU supply distribution">
+              <!-- slices drawn by JS -->
+            </svg>
+          </div>
+          <ul class="pie-legend" id="pupu-pie-legend" aria-hidden="true"></ul>
+        </div>
+        <div class="stats-actions">
+          <button type="button" class="btn btn-outline" id="refresh-stats">Refresh stats</button>
+          <span class="stats-updated" id="stats-updated"></span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>In PUPU we trust.</p>
+    <p class="footer-small"><a href="index.html">← Back to PUPU</a></p>
+  </footer>
+
+  <script src="token-info.js"></script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PUPU — PepeCoinClassic on Ethereum Classic</title>
+  <meta name="description" content="PUPU is a PepeCoinClassic derivative on Ethereum Classic. In PUPU we trust. Staking coming soon." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="noise"></div>
+
+  <header class="header">
+    <nav class="nav">
+      <a href="#" class="logo-text">PUPU</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#token">Token</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="token-info.html">Live stats</a>
+        <a href="#staking">Staking</a>
+        <a href="#community">Community</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-coin">
+        <img src="assets/logo.png" alt="PUPU Coin — Pepe holding Ethereum Classic logo" class="coin-img" />
+      </div>
+      <h1 class="hero-title">PUPU</h1>
+      <p class="hero-tagline">PepeCoinClassic derivative on <strong>Ethereum Classic</strong></p>
+      <p class="hero-motto">In PUPU we trust.</p>
+      <div class="hero-cta">
+        <a href="#about" class="btn btn-primary">Learn more</a>
+        <a href="#staking" class="btn btn-outline">Staking coming soon</a>
+      </div>
+    </section>
+
+    <section id="about" class="section about">
+      <div class="container">
+        <h2>What is PUPU?</h2>
+        <p class="lead">PUPU is a community-driven token built on <strong>Ethereum Classic (ETC)</strong> — the original Ethereum chain that stayed true to immutability and decentralization.</p>
+        <div class="about-grid">
+          <div class="card">
+            <span class="card-icon">🐸</span>
+            <h3>PepeCoinClassic derivative</h3>
+            <p>Born from the Pepe meme and the spirit of classic crypto. PUPU carries the culture forward on ETC.</p>
+          </div>
+          <div class="card">
+            <span class="card-icon">◇</span>
+            <h3>On Ethereum Classic</h3>
+            <p>Secured by Ethereum Classic’s proof-of-work and “Code is Law” ethos. No merge, no compromise.</p>
+          </div>
+          <div class="card">
+            <span class="card-icon">⚡</span>
+            <h3>Staking coming soon</h3>
+            <p>Lock PUPU, earn rewards. Staking details and launch will be announced here and in the community.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="token" class="section token">
+      <div class="container">
+        <h2>Token &amp; security</h2>
+        <p class="lead">PUPU is live on Ethereum Classic with strong liquidity and locked security.</p>
+        <div class="contracts-block">
+          <div class="contract-address">
+            <span class="contract-label">Token contract</span>
+            <div class="contract-row">
+              <code class="contract-code" id="pupu-token-contract">0x0bD01d2C68f89AbeD94BC85988fa8A6e18EFb2db</code>
+              <button type="button" class="contract-copy" data-copy="pupu-token-contract" title="Copy address">Copy</button>
+            </div>
+            <p class="contract-note">Use this address when trading on HebeSwap or adding PUPU to your wallet.</p>
+          </div>
+          <div class="contract-address">
+            <span class="contract-label">LP contract</span>
+            <div class="contract-row">
+              <code class="contract-code" id="pupu-lp-contract">0x9f1a8fC0ef058F3001c1628D8130d1C5301201C9</code>
+              <button type="button" class="contract-copy" data-copy="pupu-lp-contract" title="Copy address">Copy</button>
+            </div>
+            <p class="contract-note">HebeSwap liquidity pool token.</p>
+          </div>
+        </div>
+        <p class="contract-note contract-note-main">PUPU is not yet listed on HebeSwap — copy and paste the <strong>token</strong> contract address on HebeSwap to trade.</p>
+        <div class="token-stats">
+          <div class="stat">
+            <span class="stat-value">43B</span>
+            <span class="stat-label">In multisig</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">14B</span>
+            <span class="stat-label">HebeSwap LP</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">70%+</span>
+            <span class="stat-label">LP in dead wallet</span>
+          </div>
+        </div>
+        <div class="token-links">
+          <a href="https://app.hebeswap.com/#/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Trade on HebeSwap</a>
+          <a href="https://dexscreener.com/ethereumclassic/0x9f1a8fc0ef058f3001c1628d8130d1c5301201c9" target="_blank" rel="noopener noreferrer" class="btn btn-outline">View on DexScreener (ETC)</a>
+          <a href="https://etc.blockscout.com/token/0x0bD01d2C68f89AbeD94BC85988fa8A6e18EFb2db" target="_blank" rel="noopener noreferrer" class="btn btn-outline">View token on Blockscout (ETC)</a>
+          <a href="token-info.html" class="btn btn-primary">Live stats &amp; token info</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="roadmap" class="section roadmap">
+      <div class="container">
+        <h2>Roadmap</h2>
+        <p class="lead">Where we’ve been and where we’re going.</p>
+        <div class="roadmap-timeline">
+          <div class="roadmap-phase roadmap-phase-done">
+            <span class="roadmap-phase-label">Phase 1</span>
+            <h3>Launch &amp; liquidity</h3>
+            <ul>
+              <li>PUPU live on <strong>Ethereum Classic</strong></li>
+              <li>Tracked on <strong>DexScreener</strong> for ETC</li>
+              <li>43B in multisig · 14B in HebeSwap LP</li>
+              <li>70%+ of LP in dead wallet</li>
+              <li>Trade via copy/paste of contract address on HebeSwap</li>
+            </ul>
+          </div>
+          <div class="roadmap-phase roadmap-phase-current">
+            <span class="roadmap-phase-label">Phase 2</span>
+            <h3>Staking &amp; listing</h3>
+            <ul>
+              <li><strong>HebeSwap listing</strong> (on our list)</li>
+              <li>Stake PUPU, earn rewards</li>
+              <li>Details and launch date TBA</li>
+            </ul>
+          </div>
+          <div class="roadmap-phase roadmap-phase-done">
+            <span class="roadmap-phase-label">Live</span>
+            <h3>Token info &amp; stats</h3>
+            <ul>
+              <li><a href="token-info.html">Live stats page</a> — LP burned (dead wallet), holder count, LP supply</li>
+            </ul>
+          </div>
+          <div class="roadmap-phase roadmap-phase-upcoming">
+            <span class="roadmap-phase-label">Phase 3</span>
+            <h3>NFTs &amp; more</h3>
+            <ul>
+              <li>Potential PUPU NFT collection</li>
+              <li>Community and ecosystem expansion</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="staking" class="section staking">
+      <div class="container">
+        <h2>Staking</h2>
+        <p class="lead">Stake PUPU and earn. More details and launch date coming soon. Stay tuned.</p>
+        <div class="staking-teaser">
+          <div class="staking-badge">Coming soon</div>
+          <p>Follow our channels for the latest updates on staking and rewards.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="community" class="section community">
+      <div class="container">
+        <h2>Community</h2>
+        <p class="lead">Join the PUPU community. Links will be added here.</p>
+        <div class="community-links">
+          <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
+          <a href="#" class="social-link" aria-label="Telegram">Telegram</a>
+          <a href="#" class="social-link" aria-label="Discord">Discord</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>In PUPU we trust.</p>
+    <p class="footer-small">PUPU — PepeCoinClassic derivative on Ethereum Classic. Not financial advice.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
