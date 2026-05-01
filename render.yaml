@@ -2,7 +2,6 @@ services:
   - type: web
     name: pupu-etc-premium-redesign
     runtime: static
-    plan: free
     buildCommand: echo "No build step required for static site"
     staticPublishPath: .
     autoDeployTrigger: commit
