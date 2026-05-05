@@ -162,9 +162,8 @@ document.querySelectorAll(".contract-copy[data-copy]").forEach(function (btn) {
     ]).then(function (results) {
       var token = results[0];
       var balances = results[1];
-      var stakedRaw = findTokenBalance(balances, TOKEN_ADDRESS);
-      setText("stake-token-balance", formatCompact(stakedRaw));
-      setText("hero-token-staked", formatCompact(stakedRaw));
+      var nftRaw = findTokenBalance(balances, TOKEN_ADDRESS);
+      setText("stake-nft-balance", formatCompact(nftRaw));
       setText("stake-token-holders", token.holders_count != null ? Number(token.holders_count).toLocaleString() : "-");
       setText("stake-token-supply", token.total_supply ? formatCompact(token.total_supply) : "-");
     });
