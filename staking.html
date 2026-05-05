@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PUPU - Staking</title>
+  <meta name="description" content="PUPU staking for LP tokens and PUPU tokens on Ethereum Classic." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="PUPU - Staking" />
+  <meta property="og:description" content="Prepare and track PUPU LP staking and token staking on Ethereum Classic." />
+  <meta property="og:url" content="https://pupu-etc-premium-redesign.onrender.com/staking.html" />
+  <meta property="og:image" content="https://pupu-etc-premium-redesign.onrender.com/assets/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="PUPU - Staking" />
+  <meta name="twitter:description" content="Prepare and track PUPU LP staking and token staking on Ethereum Classic." />
+  <meta name="twitter:image" content="https://pupu-etc-premium-redesign.onrender.com/assets/logo.png" />
+  <link rel="icon" href="assets/logo.png" type="image/png" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body data-staking-page="combined">
+  <div class="noise"></div>
+
+  <header class="header">
+    <nav class="nav">
+      <a href="index.html" class="logo-text">PUPU</a>
+      <button type="button" class="nav-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-links" id="primary-nav">
+        <a href="index.html#about">About</a>
+        <a href="index.html#token">Token</a>
+        <a href="index.html#buy">Buy</a>
+        <a href="token-info.html">Live stats</a>
+        <a href="staking.html">Staking</a>
+        <a href="index.html#community">Community</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section staking-page-hero">
+      <div class="container staking-page-grid">
+        <div>
+          <span class="staking-badge">Staking</span>
+          <h1 class="page-title">Stake PUPU</h1>
+          <p class="lead">One staking hub for PUPU/ETC LP staking and PUPU token staking on Ethereum Classic.</p>
+          <div class="staking-actions">
+            <a href="#lp-staking" class="btn btn-outline">LP staking</a>
+            <a href="#token-staking" class="btn btn-primary">Token staking</a>
+          </div>
+        </div>
+        <div class="stake-panel">
+          <span class="stake-panel-label">Wallet status</span>
+          <strong id="wallet-status">Not connected</strong>
+          <p id="network-status">Ethereum Classic required</p>
+          <button type="button" class="btn btn-outline" id="connect-wallet">Check wallet</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container staking-hub-grid">
+        <article class="staking-card" id="lp-staking">
+          <span class="staking-badge">LP staking</span>
+          <h2>PUPU/ETC LP stake</h2>
+          <p>Stake HebeSwap PUPU/ETC LP tokens when the LP staking contract is enabled.</p>
+
+          <div class="contract-address">
+            <span class="contract-label">LP token contract</span>
+            <div class="contract-row">
+              <code class="contract-code" id="staking-lp-contract">0x9f1a8fC0ef058F3001c1628D8130d1C5301201C9</code>
+              <button type="button" class="contract-copy" data-copy="staking-lp-contract" title="Copy address">Copy</button>
+            </div>
+          </div>
+
+          <div class="staking-mini-stats">
+            <div>
+              <span>Pool PUPU</span>
+              <strong id="stake-pool-pupu">-</strong>
+            </div>
+            <div>
+              <span>Pool ETC</span>
+              <strong id="stake-pool-etc">-</strong>
+            </div>
+            <div>
+              <span>LP burned</span>
+              <strong id="stake-lp-burned">-</strong>
+            </div>
+          </div>
+
+          <div class="stake-form">
+            <label for="lp-stake-amount">LP amount</label>
+            <input id="lp-stake-amount" type="text" inputmode="decimal" placeholder="0.0 LP" disabled />
+            <button type="button" class="btn btn-outline" disabled>LP staking contract pending</button>
+            <p class="contract-note">Deposits stay disabled until the LP staking contract is verified.</p>
+          </div>
+        </article>
+
+        <article class="staking-card" id="token-staking">
+          <span class="staking-badge">Token staking</span>
+          <h2>PUPU token stake</h2>
+          <p>Track the token staking contract and prepare PUPU-only deposits when staking actions are enabled.</p>
+
+          <div class="contract-address">
+            <span class="contract-label">Token staking contract</span>
+            <div class="contract-row">
+              <code class="contract-code" id="staking-token-contract">0x547F1eE3eCe50c0F5cc998D24E9FF28793b42Ee5</code>
+              <button type="button" class="contract-copy" data-copy="staking-token-contract" title="Copy address">Copy</button>
+            </div>
+          </div>
+
+          <div class="staking-mini-stats">
+            <div>
+              <span>PUPU staked</span>
+              <strong id="stake-token-balance">-</strong>
+            </div>
+            <div>
+              <span>Holders</span>
+              <strong id="stake-token-holders">-</strong>
+            </div>
+            <div>
+              <span>Supply</span>
+              <strong id="stake-token-supply">-</strong>
+            </div>
+          </div>
+
+          <div class="stake-form">
+            <label for="token-stake-amount">PUPU amount</label>
+            <input id="token-stake-amount" type="text" inputmode="decimal" placeholder="0.0 PUPU" disabled />
+            <button type="button" class="btn btn-primary" disabled>Token staking actions pending</button>
+            <p class="contract-note">Deposits stay disabled until ABI and reward settings are verified.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>In PUPU we trust.</p>
+    <p class="footer-small"><a href="index.html">Back to PUPU</a></p>
+  </footer>
+
+  <script src="staking.js"></script>
+</body>
+</html>
