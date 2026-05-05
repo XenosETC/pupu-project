@@ -144,10 +144,13 @@ document.querySelectorAll(".contract-copy[data-copy]").forEach(function (btn) {
 
       setText("stake-pool-pupu", formatCompact(reservePUPU));
       setText("stake-pool-etc", formatCompact(reserveETC));
+      setText("hero-pool-pupu", formatCompact(reservePUPU));
 
       var lpBurnedRaw = findTokenBalance(deadBalances, LP_ADDRESS);
       if (lpBurnedRaw != null && lp.total_supply && Number(lp.total_supply) > 0) {
-        setText("stake-lp-burned", ((Number(lpBurnedRaw) / Number(lp.total_supply)) * 100).toFixed(1) + "%");
+        var burnedPct = ((Number(lpBurnedRaw) / Number(lp.total_supply)) * 100).toFixed(1) + "%";
+        setText("stake-lp-burned", burnedPct);
+        setText("hero-lp-burned", burnedPct);
       }
     });
   }
@@ -161,6 +164,7 @@ document.querySelectorAll(".contract-copy[data-copy]").forEach(function (btn) {
       var balances = results[1];
       var stakedRaw = findTokenBalance(balances, TOKEN_ADDRESS);
       setText("stake-token-balance", formatCompact(stakedRaw));
+      setText("hero-token-staked", formatCompact(stakedRaw));
       setText("stake-token-holders", token.holders_count != null ? Number(token.holders_count).toLocaleString() : "-");
       setText("stake-token-supply", token.total_supply ? formatCompact(token.total_supply) : "-");
     });

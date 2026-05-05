@@ -45,20 +45,38 @@
   <main>
     <section class="section staking-page-hero">
       <div class="container staking-page-grid">
-        <div>
+        <div class="staking-hero-copy">
           <span class="staking-badge">Staking</span>
           <h1 class="page-title">Stake PUPU</h1>
           <p class="lead">One staking hub for PUPU/ETC LP staking and PUPU token staking on Ethereum Classic.</p>
+          <div class="staking-hero-metrics">
+            <div>
+              <span>LP pool</span>
+              <strong id="hero-pool-pupu">-</strong>
+            </div>
+            <div>
+              <span>Token staking</span>
+              <strong id="hero-token-staked">-</strong>
+            </div>
+            <div>
+              <span>LP burned</span>
+              <strong id="hero-lp-burned">-</strong>
+            </div>
+          </div>
           <div class="staking-actions">
             <a href="#lp-staking" class="btn btn-outline">LP staking</a>
             <a href="#token-staking" class="btn btn-primary">Token staking</a>
           </div>
         </div>
-        <div class="stake-panel">
+        <div class="stake-panel stake-wallet-panel">
           <span class="stake-panel-label">Wallet status</span>
           <strong id="wallet-status">Not connected</strong>
           <p id="network-status">Ethereum Classic required</p>
           <button type="button" class="btn btn-outline" id="connect-wallet">Check wallet</button>
+          <div class="stake-status-list">
+            <div><span>Chain</span><strong>ETC</strong></div>
+            <div><span>Actions</span><strong>Pending</strong></div>
+          </div>
         </div>
       </div>
     </section>
@@ -66,8 +84,13 @@
     <section class="section">
       <div class="container staking-hub-grid">
         <article class="staking-card" id="lp-staking">
-          <span class="staking-badge">LP staking</span>
-          <h2>PUPU/ETC LP stake</h2>
+          <div class="staking-card-header">
+            <div>
+              <span class="staking-badge">LP staking</span>
+              <h2>PUPU/ETC LP stake</h2>
+            </div>
+            <span class="stake-state-chip">Contract pending</span>
+          </div>
           <p>Stake HebeSwap PUPU/ETC LP tokens when the LP staking contract is enabled.</p>
 
           <div class="contract-address">
@@ -75,6 +98,21 @@
             <div class="contract-row">
               <code class="contract-code" id="staking-lp-contract">0x9f1a8fC0ef058F3001c1628D8130d1C5301201C9</code>
               <button type="button" class="contract-copy" data-copy="staking-lp-contract" title="Copy address">Copy</button>
+            </div>
+          </div>
+
+          <div class="stake-route">
+            <div>
+              <span>Stake asset</span>
+              <strong>PUPU/ETC LP</strong>
+            </div>
+            <div>
+              <span>Reward asset</span>
+              <strong>PUPU</strong>
+            </div>
+            <div>
+              <span>Launch state</span>
+              <strong>Awaiting contract</strong>
             </div>
           </div>
 
@@ -102,8 +140,13 @@
         </article>
 
         <article class="staking-card" id="token-staking">
-          <span class="staking-badge">Token staking</span>
-          <h2>PUPU token stake</h2>
+          <div class="staking-card-header">
+            <div>
+              <span class="staking-badge">Token staking</span>
+              <h2>PUPU token stake</h2>
+            </div>
+            <span class="stake-state-chip stake-state-chip-live">Tracked</span>
+          </div>
           <p>Track the token staking contract and prepare PUPU-only deposits when staking actions are enabled.</p>
 
           <div class="contract-address">
@@ -111,6 +154,21 @@
             <div class="contract-row">
               <code class="contract-code" id="staking-token-contract">0x547F1eE3eCe50c0F5cc998D24E9FF28793b42Ee5</code>
               <button type="button" class="contract-copy" data-copy="staking-token-contract" title="Copy address">Copy</button>
+            </div>
+          </div>
+
+          <div class="stake-route">
+            <div>
+              <span>Stake asset</span>
+              <strong>PUPU</strong>
+            </div>
+            <div>
+              <span>Reward asset</span>
+              <strong>PUPU</strong>
+            </div>
+            <div>
+              <span>Launch state</span>
+              <strong>ABI pending</strong>
             </div>
           </div>
 
