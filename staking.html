@@ -178,10 +178,6 @@
               <strong>0</strong>
             </div>
             <div>
-              <span>PUPU in deployed NFTs</span>
-              <strong id="stake-nft-balance">-</strong>
-            </div>
-            <div>
               <span>Holders</span>
               <strong id="stake-token-holders">-</strong>
             </div>
@@ -196,6 +192,36 @@
             <input id="token-stake-amount" type="text" inputmode="decimal" placeholder="0.0 PUPU" disabled />
             <button type="button" class="btn btn-primary" disabled>Token staking actions pending</button>
             <p class="contract-note">Deposits stay disabled until ABI and reward settings are verified.</p>
+          </div>
+        </article>
+
+        <article class="staking-card nft-stake-card" id="nft-stake">
+          <div class="staking-card-header">
+            <div>
+              <span class="staking-badge">NFT stake</span>
+              <h2>Deployed NFTs</h2>
+            </div>
+            <span class="stake-state-chip stake-state-chip-live">Tracked</span>
+          </div>
+          <p>PUPU held by the deployed NFT staking contract. This is separate from the pending PUPU token staking contract.</p>
+
+          <div class="contract-address">
+            <span class="contract-label">NFT staking contract</span>
+            <div class="contract-row">
+              <code class="contract-code" id="staking-nft-contract">0x547F1eE3eCe50c0F5cc998D24E9FF28793b42Ee5</code>
+              <button type="button" class="contract-copy" data-copy="staking-nft-contract" title="Copy address">Copy</button>
+            </div>
+          </div>
+
+          <div class="staking-mini-stats nft-mini-stats">
+            <div>
+              <span>PUPU in deployed NFTs</span>
+              <strong id="stake-nft-balance">-</strong>
+            </div>
+            <div>
+              <span>Status</span>
+              <strong>NFT stake</strong>
+            </div>
           </div>
         </article>
       </div>

@@ -851,6 +851,14 @@ body::after {
   background: rgba(7, 10, 12, 0.50);
 }
 
+.nft-stake-card {
+  grid-column: 1 / -1;
+}
+
+.nft-mini-stats {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .stake-route {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
