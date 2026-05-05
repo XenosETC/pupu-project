@@ -683,6 +683,11 @@ body::after {
   gap: 1.5rem;
 }
 
+.staking-hub-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+}
+
 .staking-option,
 .staking-card,
 .stake-panel,
@@ -749,7 +754,7 @@ body::after {
 
 .staking-hero-metrics {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0.75rem;
   margin: 2rem 0;
 }
@@ -852,11 +857,11 @@ body::after {
 }
 
 .nft-stake-card {
-  grid-column: 1 / -1;
+  grid-column: auto;
 }
 
 .nft-mini-stats {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
 }
 
 .stake-route {
@@ -889,7 +894,7 @@ body::after {
 
 .staking-mini-stats {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.75rem;
   margin: 1.25rem 0;
 }
@@ -1253,6 +1258,16 @@ body::after {
   font-weight: 500;
   color: var(--gold-dim);
   font-size: 0.85rem;
+}
+
+@media (max-width: 980px) {
+  .staking-hub-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .staking-hero-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 640px) {
